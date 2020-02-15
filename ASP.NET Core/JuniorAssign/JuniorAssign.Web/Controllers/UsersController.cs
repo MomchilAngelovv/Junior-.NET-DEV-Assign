@@ -65,5 +65,11 @@
             await this.usersService.CreateAsync(input.Username, input.Password);
             return this.Redirect(nameof(Login));
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await this.signInManager.SignOutAsync();
+            return this.Redirect("/");
+        }
     }
 }

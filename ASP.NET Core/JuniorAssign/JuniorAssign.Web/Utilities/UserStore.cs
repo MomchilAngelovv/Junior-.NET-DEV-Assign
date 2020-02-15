@@ -52,7 +52,7 @@
             cancellationToken.ThrowIfCancellationRequested();
             return await db.Users.SingleOrDefaultAsync(u => u.Id.Equals(Guid.Parse(userId)), cancellationToken);
         }
-
+        
         public async Task<User> FindByNameAsync(string normalizedUserName,
             CancellationToken cancellationToken = default)
         {
