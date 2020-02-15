@@ -11,5 +11,6 @@
         Task UpdateAsync(string id, string newUsername, string newPassword);
         List<User> GetAll();
         User GetBy(string id);
+        User GetBy(string username, string password);
     }
 }

@@ -1,0 +1,23 @@
+﻿@model JuniorAssign.Web.Models.Users.UserRegisterInputModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form asp-controller="Users" asp-action="Register" method="POST">
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RepeatPassword"></label>
+        <input asp-for="RepeatPassword" class="form-control" />
+        <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

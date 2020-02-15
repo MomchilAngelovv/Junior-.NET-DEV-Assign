@@ -1,26 +1,20 @@
 ﻿namespace JuniorAssign.Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class User
+    public class Role
     {
-        public User()
+        public Role()
         {
-            this.Id = Guid.NewGuid().ToString();
-            this.Contragents = new List<Contragent>();
             this.UserRoles = new List<UserRole>();
         }
 
         [Key]
         public string Id { get; set; }
         [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Password { get; set; }
+        public string Name { get; set; }
 
-        public virtual IList<Contragent> Contragents { get; set; }
         public virtual IList<UserRole> UserRoles { get; set; }
     }
 }

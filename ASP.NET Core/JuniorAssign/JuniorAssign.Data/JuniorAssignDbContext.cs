@@ -13,5 +13,11 @@
         {
             optionsBuilder.UseSqlServer("Server=.;Database=JuniorAssignDb;Integrated Security=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserRole>().HasKey(ur => new { ur.UserId, ur.RoleId });
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
