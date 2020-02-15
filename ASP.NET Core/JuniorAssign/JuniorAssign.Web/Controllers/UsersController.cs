@@ -1,15 +1,14 @@
-﻿using JuniorAssign.Data.Models;
-using JuniorAssign.Services.Users;
-using JuniorAssign.Web.Models.Users;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace JuniorAssign.Web.Controllers
+﻿namespace JuniorAssign.Web.Controllers
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Identity;
+
+    using JuniorAssign.Data.Models;
+    using JuniorAssign.Services.Users;
+    using JuniorAssign.Web.Models.Users;
+
     public class UsersController : Controller
     {
         private readonly IUsersService usersService;
@@ -29,6 +28,11 @@ namespace JuniorAssign.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginInputModel input)
         {
+            if (this.ModelState.IsValid == false)
+            {
+                return this.BadRequest();
+            }
+
             var user = this.usersService.GetBy(input.Username, input.Password);
 
             if (user == null)

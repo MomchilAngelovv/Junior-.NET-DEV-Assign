@@ -1,13 +1,13 @@
-﻿using JuniorAssign.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace JuniorAssign.Web.Utilities
+﻿namespace JuniorAssign.Web.Utilities
 {
+    using System;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Identity;
+
+    using JuniorAssign.Data.Models;
+
     public class RoleStore : IRoleStore<Role>
     {
         public Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)

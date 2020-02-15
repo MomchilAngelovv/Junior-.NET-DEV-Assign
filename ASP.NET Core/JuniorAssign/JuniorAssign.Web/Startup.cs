@@ -1,21 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using JuniorAssign.Data;
-using JuniorAssign.Data.Models;
-using JuniorAssign.Services.Users;
-using JuniorAssign.Web.Utilities;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace JuniorAssign.Web
 {
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+
+    using JuniorAssign.Data;
+    using JuniorAssign.Data.Models;
+    using JuniorAssign.Web.Utilities;
+    using JuniorAssign.Services.Users;
+
     public class Startup
     {
         private readonly IConfiguration configuration;
