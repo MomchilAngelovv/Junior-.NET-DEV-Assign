@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuniorAssign.Data", "Junior
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuniorAssign.Services", "JuniorAssign.Services\JuniorAssign.Services.csproj", "{46859DB7-EE7F-4FC2-A327-1AEE98C70B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorAssign.Web", "JuniorAssign.Web\JuniorAssign.Web.csproj", "{AC6B5AFA-EF11-4C41-B351-48243583837B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuniorAssign.Web", "JuniorAssign.Web\JuniorAssign.Web.csproj", "{AC6B5AFA-EF11-4C41-B351-48243583837B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorAssign.Services.Tests", "JuniorAssign.Services.Tests\JuniorAssign.Services.Tests.csproj", "{2305C201-3F47-4D8E-B873-A0A296F45994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AC6B5AFA-EF11-4C41-B351-48243583837B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC6B5AFA-EF11-4C41-B351-48243583837B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6B5AFA-EF11-4C41-B351-48243583837B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2305C201-3F47-4D8E-B873-A0A296F45994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2305C201-3F47-4D8E-B873-A0A296F45994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2305C201-3F47-4D8E-B873-A0A296F45994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2305C201-3F47-4D8E-B873-A0A296F45994}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
