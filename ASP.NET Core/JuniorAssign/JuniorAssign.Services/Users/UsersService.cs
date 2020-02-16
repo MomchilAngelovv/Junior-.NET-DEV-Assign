@@ -48,6 +48,16 @@
             return this.db.Users.FirstOrDefault(u => u.Username == username && u.Password == passwordHash);
         }
 
+        public string GetUserIdBy(string username)
+        {
+            return this.db.Users.FirstOrDefault(u => u.Username == username)?.Id;
+        }
+
+        public bool IsUsernameUsed(string username)
+        {
+            return this.db.Users.Any(u => u.Username == username);
+        }
+
         public async Task UpdateAsync(string id, string newUsername, string newPassword)
         {
             var user = this.db.Users.FirstOrDefault(u => u.Id == id);

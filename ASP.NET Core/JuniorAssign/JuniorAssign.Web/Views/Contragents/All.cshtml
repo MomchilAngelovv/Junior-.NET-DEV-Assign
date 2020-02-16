@@ -1,0 +1,13 @@
+﻿@model JuniorAssign.Web.Models.Contragents.ContragentsAllViewModel
+@{
+    ViewData["Title"] = "All Contragents";
+}
+
+<h2 class="text-center">All Contragents</h2>
+
+<div class="list-group">
+    @foreach (var contragent in Model.Contragents)
+    {
+        <a asp-controller="Contragents" asp-action="Details" asp-route-id="@contragent.Id" class="list-group-item list-group-item-action btn btn-warning text-center">@contragent.Name</a>
+    }
+</div>

@@ -12,5 +12,7 @@
         List<User> GetAll();
         User GetBy(string id);
         User GetBy(string username, string password);
+        string GetUserIdBy(string username);
+        bool IsUsernameUsed(string username);
     }
 }

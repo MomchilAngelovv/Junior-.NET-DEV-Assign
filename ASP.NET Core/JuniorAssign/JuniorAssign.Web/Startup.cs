@@ -11,6 +11,7 @@ namespace JuniorAssign.Web
     using JuniorAssign.Data.Models;
     using JuniorAssign.Web.Utilities;
     using JuniorAssign.Services.Users;
+    using JuniorAssign.Services.Contragents;
 
     public class Startup
     {
@@ -33,6 +34,7 @@ namespace JuniorAssign.Web
             services.AddControllersWithViews();
 
             services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IContragentsService, ContragentsService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

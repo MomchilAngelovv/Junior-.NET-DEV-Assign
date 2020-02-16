@@ -1,0 +1,28 @@
+﻿@model JuniorAssign.Web.Models.Contragents.ContragentCreateInputModel
+@{
+    ViewData["Title"] = "Create Contragent";
+}
+
+<form asp-controller="Contragents" asp-action="Create" method="POST">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VatNumber">VAT number</label>
+        <input asp-for="VatNumber" class="form-control" />
+        <span asp-validation-for="VatNumber" class="text-danger"></span>
+    </div>
+    <button type="submit" class="col-12 btn btn-success">Create</button>
+</form>

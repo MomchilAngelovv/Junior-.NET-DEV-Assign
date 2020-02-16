@@ -22,7 +22,8 @@
 
         public IActionResult Login()
         {
-            return this.View();
+            var emptyUserLoginInputModel = new UserLoginInputModel();
+            return this.View(emptyUserLoginInputModel);
         }
 
         [HttpPost]
@@ -37,7 +38,8 @@
 
             if (user == null)
             {
-                return this.BadRequest();
+                this.TempData["InvalidLogin"] = "Invalid login credentials.";
+                return this.View(input);
             }
 
             await this.signInManager.SignInAsync(user, input.IsPersistent);
@@ -58,6 +60,11 @@
             }
 
             if (input.Password != input.RepeatPassword)
+            {
+                return this.BadRequest();
+            }
+
+            if (this.usersService.IsUsernameUsed(input.Username))
             {
                 return this.BadRequest();
             }
