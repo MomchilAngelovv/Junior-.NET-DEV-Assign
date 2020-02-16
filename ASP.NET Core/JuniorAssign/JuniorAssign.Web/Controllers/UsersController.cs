@@ -20,15 +20,9 @@
             this.signInManager = signInManager;
         }
 
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login()
         {
             var emptyUserLoginInputModel = new UserLoginInputModel();
-
-            if (string.IsNullOrWhiteSpace(returnUrl) == false)
-            {
-                this.TempData["ReturnUrl"] = returnUrl;
-            }
-
             return this.View(emptyUserLoginInputModel);
         }
 
@@ -49,13 +43,7 @@
             }
 
             await this.signInManager.SignInAsync(user, input.IsPersistent);
-
-            if (this.TempData["ReturnUrl"] != null)
-            {
-                return this.Redirect(this.TempData["ReturnUrl"].ToString());
-            }
-
-            return this.Redirect("/");
+            return this.Redirect("/Contragents/All");
         }
 
         public IActionResult Register()
@@ -94,3 +82,4 @@
         }
     }
 }
+ 
