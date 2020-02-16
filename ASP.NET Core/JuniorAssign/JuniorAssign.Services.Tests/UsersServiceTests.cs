@@ -1,6 +1,7 @@
 namespace JuniorAssign.Services.Tests
 {
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Xunit;
@@ -19,7 +20,7 @@ namespace JuniorAssign.Services.Tests
 
             await usersService.CreateAsync("Monkata", "123");
 
-            Assert.Equal(1, await inMemoryDb.Users.CountAsync());
+            Assert.Equal(1, inMemoryDb.Users.Count());
         }
 
         [Fact]
@@ -32,7 +33,7 @@ namespace JuniorAssign.Services.Tests
             await usersService.CreateAsync("Goshkata", "123");
             await usersService.CreateAsync("Mitko", "123");
 
-            Assert.Equal(3, await inMemoryDb.Users.CountAsync());
+            Assert.Equal(3, inMemoryDb.Users.Count());
         }
 
         [Fact]
@@ -105,7 +106,7 @@ namespace JuniorAssign.Services.Tests
             await usersService.UpdateAsync(createdUserId, "NewTest", "New123");
             var user = usersService.GetBy(createdUserId);
 
-            Assert.Equal("NewTest",user.Username);
+            Assert.Equal("NewTest", user.Username);
         }
 
         private static DbContextOptions CreateNewContextOptions()
