@@ -3,6 +3,11 @@
     ViewData["Title"] = "Login";
 }
 
+@if (this.TempData["UsernameTaken"] != null)
+{
+    <h3>@this.TempData["UsernameTaken"]</h3>
+}
+
 <form asp-controller="Users" asp-action="Register" method="POST">
     <div class="form-group">
         <label asp-for="Username"></label>

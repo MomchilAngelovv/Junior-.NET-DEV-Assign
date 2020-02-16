@@ -31,7 +31,7 @@
         {
             if (this.ModelState.IsValid == false)
             {
-                return this.BadRequest();
+                return this.View(input);
             }
 
             var user = this.usersService.GetBy(input.Username, input.Password);
@@ -48,7 +48,8 @@
 
         public IActionResult Register()
         {
-            return this.View();
+            var emptyUserRegisterInputModel = new UserRegisterInputModel();
+            return this.View(emptyUserRegisterInputModel);
         }
 
         [HttpPost]
@@ -66,7 +67,8 @@
 
             if (this.usersService.IsUsernameUsed(input.Username))
             {
-                return this.BadRequest();
+                this.TempData["UsernameTaken"] = "Username already taken";
+                return View(input);
             }
 
             await this.usersService.CreateAsync(input.Username, input.Password);
