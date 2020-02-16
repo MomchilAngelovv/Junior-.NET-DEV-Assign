@@ -33,6 +33,8 @@ namespace JuniorAssign.Web
 
             services.AddControllersWithViews();
 
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Users/Login");
+
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IContragentsService, ContragentsService>();
         }

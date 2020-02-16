@@ -20,16 +20,22 @@
             this.signInManager = signInManager;
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl)
         {
             var emptyUserLoginInputModel = new UserLoginInputModel();
+
+            if (string.IsNullOrWhiteSpace(returnUrl) == false)
+            {
+                this.TempData["ReturnUrl"] = returnUrl;
+            }
+
             return this.View(emptyUserLoginInputModel);
         }
 
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginInputModel input)
         {
-            if (this.ModelState.IsValid == false)
+            if (this.ModelState.IsValid == false)   
             {
                 return this.View(input);
             }
@@ -43,6 +49,12 @@
             }
 
             await this.signInManager.SignInAsync(user, input.IsPersistent);
+
+            if (this.TempData["ReturnUrl"] != null)
+            {
+                return this.Redirect(this.TempData["ReturnUrl"].ToString());
+            }
+
             return this.Redirect("/");
         }
 

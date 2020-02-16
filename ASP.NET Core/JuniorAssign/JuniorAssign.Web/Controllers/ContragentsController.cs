@@ -4,11 +4,13 @@
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Authorization;
 
     using JuniorAssign.Services.Users;
     using JuniorAssign.Services.Contragents;
     using JuniorAssign.Web.Models.Contragents;
 
+    [Authorize]
     public class ContragentsController : Controller
     {
         private readonly IContragentsService contragentsService;
