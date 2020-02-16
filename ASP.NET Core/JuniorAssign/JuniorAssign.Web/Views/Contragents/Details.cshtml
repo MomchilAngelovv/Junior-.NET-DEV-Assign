@@ -3,4 +3,16 @@
     ViewData["Title"] = "Details";
 }
 
-
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Name: @Model.Name</h5>
+                <p class="card-text">Addres: @Model.Address.</p>
+                <p class="card-text">Email: @Model.Email</p>
+                <p class="card-text">Email: @Model.VatNumber</p>
+                <a asp-controller="Contragents" asp-action="All" class="btn btn-info">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

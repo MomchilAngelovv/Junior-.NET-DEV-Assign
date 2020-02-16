@@ -2,8 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome @this.User.Identity.Name</h1>
-</div>
+@if (this.User.Identity.IsAuthenticated)
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome @this.User.Identity.Name</h1>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Please log in to use Junior Assign.</h1>
+    </div>
+}
+
 
 
